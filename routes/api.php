@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Posts\CreatePostController;
 use App\Http\Controllers\Api\Subscriptions\SubscribeUserController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('subscriptions', SubscribeUserController::class);
+Route::post('posts', CreatePostController::class);
