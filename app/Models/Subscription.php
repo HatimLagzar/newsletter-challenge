@@ -14,4 +14,9 @@ class Subscription extends Model
     public const WEBSITE_ID_COLUMN = 'website_id';
     public const CREATED_AT_COLUMN = 'created_at';
     public const UPDATED_AT_COLUMN = 'updated_at';
+
+    protected $fillable = [
+        self::USER_ID_COLUMN,
+        self::WEBSITE_ID_COLUMN
+    ];
 }
