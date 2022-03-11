@@ -1,5 +1,9 @@
 ## Setup
 
+Install the dependencies
+
+`composer i`
+
 Create your environment file
 
 `cp .env.example .env`
