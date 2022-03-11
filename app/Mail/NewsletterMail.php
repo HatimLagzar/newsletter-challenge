@@ -34,6 +34,7 @@ class NewsletterMail extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.newsletter');
+        return $this->view('mails.newsletter')
+            ->with('posts', $this->posts);
     }
 }

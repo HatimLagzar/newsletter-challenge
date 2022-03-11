@@ -38,4 +38,12 @@ class SubscriptionService
     {
         return $this->subscriptionRepository->getAllForWebsite($website->getId());
     }
+
+    /**
+     * @return Collection|Subscription[]
+     */
+    public function getAll(): Collection
+    {
+        return $this->subscriptionRepository->getAll();
+    }
 }

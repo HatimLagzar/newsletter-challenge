@@ -31,4 +31,13 @@ class SubscriptionRepository
             ->where(Subscription::WEBSITE_ID_COLUMN, $id)
             ->get();
     }
+
+    /**
+     * @return Collection|Subscription[]
+     */
+    public function getAll(): Collection
+    {
+        return Subscription::query()
+            ->get();
+    }
 }

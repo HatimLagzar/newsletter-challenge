@@ -5,19 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Subscription extends Model
+class NewsletterHistory extends Model
 {
     use HasFactory;
 
+    public const TABLE = 'newsletter_history';
+
     public const ID_COLUMN = 'id';
     public const USER_ID_COLUMN = 'user_id';
-    public const WEBSITE_ID_COLUMN = 'website_id';
+    public const POST_ID_COLUMN = 'post_id';
     public const CREATED_AT_COLUMN = 'created_at';
     public const UPDATED_AT_COLUMN = 'updated_at';
 
+    protected $table = self::TABLE;
+
     protected $fillable = [
         self::USER_ID_COLUMN,
-        self::WEBSITE_ID_COLUMN
+        self::POST_ID_COLUMN,
     ];
 
     public function getId(): int
@@ -30,18 +34,8 @@ class Subscription extends Model
         return $this->getAttribute(self::USER_ID_COLUMN);
     }
 
-    public function getWebsiteId(): int
+    public function getPostId(): int
     {
-        return $this->getAttribute(self::WEBSITE_ID_COLUMN);
-    }
-
-    public function user(): User
-    {
-        return $this->hasOne(User::class, User::ID_COLUMN, self::USER_ID_COLUMN)->first();
-    }
-
-    public function website(): Website
-    {
-        return $this->hasOne(Website::class, Website::ID_COLUMN, self::WEBSITE_ID_COLUMN)->first();
+        return $this->getAttribute(self::POST_ID_COLUMN);
     }
 }

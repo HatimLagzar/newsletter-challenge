@@ -27,7 +27,7 @@ class CreateNewsletterHistoryTable extends Migration
 
             $table->foreign('post_id')
                 ->references('id')
-                ->on('users')
+                ->on('posts')
                 ->cascadeOnUpdate()
                 ->nullOnDelete();
         });
