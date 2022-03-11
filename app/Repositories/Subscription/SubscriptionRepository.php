@@ -3,6 +3,7 @@
 namespace App\Repositories\Subscription;
 
 use App\Models\Subscription;
+use Illuminate\Database\Eloquent\Collection;
 
 class SubscriptionRepository
 {
@@ -18,5 +19,16 @@ class SubscriptionRepository
     {
         return Subscription::query()
             ->create($attributes);
+    }
+
+    /**
+     * @param int $getId
+     * @return Collection|Subscription[]
+     */
+    public function getAllForWebsite(int $id): Collection
+    {
+        return Subscription::query()
+            ->where(Subscription::WEBSITE_ID_COLUMN, $id)
+            ->get();
     }
 }

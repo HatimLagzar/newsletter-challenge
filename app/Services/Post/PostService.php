@@ -17,10 +17,6 @@ class PostService
 
     public function create(array $attributes): Post
     {
-        $post = $this->postRepository->create($attributes);
-
-        dispatch(new PostCreatedEvent($post));
-
-        return $post;
+        return $this->postRepository->create($attributes);
     }
 }

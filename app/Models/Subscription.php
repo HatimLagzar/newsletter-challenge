@@ -19,4 +19,19 @@ class Subscription extends Model
         self::USER_ID_COLUMN,
         self::WEBSITE_ID_COLUMN
     ];
+
+    public function getId(): int
+    {
+        return $this->getAttribute(self::ID_COLUMN);
+    }
+
+    public function getUserId(): int
+    {
+        return $this->getAttribute(self::USER_ID_COLUMN);
+    }
+
+    public function getWebsiteId(): int
+    {
+        return $this->getAttribute(self::WEBSITE_ID_COLUMN);
+    }
 }
