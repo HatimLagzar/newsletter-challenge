@@ -13,4 +13,9 @@ class Website extends Model
     public const URL_COLUMN = 'url';
     public const CREATED_AT_COLUMN = 'created_at';
     public const UPDATED_AT_COLUMN = 'updated_at';
+
+    public function getId(): int
+    {
+        return $this->getAttribute(self::ID_COLUMN);
+    }
 }
